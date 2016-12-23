@@ -1,3 +1,4 @@
+const BabiliPlugin = require('babili-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const path = require('path');
 const merge = require('webpack-merge');
@@ -53,7 +54,11 @@ const clientConfig = {
 module.exports = (env) => {
   switch (env) {
     case 'production':
-      return clientConfig;
+      return merge(clientConfig, {
+        plugins: [
+          new BabiliPlugin(),
+        ],
+      });
     default:
       return merge(clientConfig, {
         output: {
