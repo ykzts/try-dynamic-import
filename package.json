@@ -23,7 +23,7 @@
     "webpack-merge": "^2.0.0"
   },
   "license": "MIT",
-  "name": "test",
+  "name": "try-dynamic-import",
   "private": true,
   "scripts": {
     "build": "webpack --env ${NODE_ENV:-development}",
